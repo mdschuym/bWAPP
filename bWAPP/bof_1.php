@@ -138,7 +138,7 @@ function commandi($data)
         else
         {
 
-            echo shell_exec("./apps/movie_search " . $title);
+            echo shell_exec("./apps/movie_search " . escapeshellarg($title));
 
         }
 
