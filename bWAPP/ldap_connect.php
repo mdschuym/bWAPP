@@ -313,16 +313,16 @@ function clear()
     <form action="<?php echo($_SERVER["SCRIPT_NAME"]);?>" method="POST">
 
         <p><label for="login">Login:</label><br />
-        <input type="text" id="login" name="login" value="<?php echo isset($_SESSION["ldap"]["login"])?$_SESSION["ldap"]["login"]:$login;?>" size="20" autocomplete="off"></p>
+        <input type="text" id="login" name="login" value="<?php echo htmlentities(isset($_SESSION["ldap"]["login"])?$_SESSION["ldap"]["login"]:$login, ENT_QUOTES);?>" size="20" autocomplete="off"></p>
 
         <p><label for="password">Password:</label><br />
-        <input type="password" id="password" name="password" value="<?php echo isset($_SESSION["ldap"]["password"])?"":$password;?>" size="20" autocomplete="off"></p>
+        <input type="password" id="password" name="password" value="<?php echo htmlentities(isset($_SESSION["ldap"]["password"])?"":$password, ENT_QUOTES);?>" size="20" autocomplete="off"></p>
         
         <p><label for="server">Server:</label><br />
-        <input type="text" id="server" name="server" value="<?php echo isset($_SESSION["ldap"]["server"])?$_SESSION["ldap"]["server"]:$server;?>" size="20"></p>
+        <input type="text" id="server" name="server" value="<?php echo htmlentities(isset($_SESSION["ldap"]["server"])?$_SESSION["ldap"]["server"]:$server, ENT_QUOTES);?>" size="20"></p>
         
         <p><label for="dn">Base DN:</label><br />
-        <input type="text" id="dn" name="dn" value="<?php echo isset($_SESSION["ldap"]["dn"])?$_SESSION["ldap"]["dn"]:$dn;?>" size="20"></p>
+        <input type="text" id="dn" name="dn" value="<?php echo htmlentities(isset($_SESSION["ldap"]["dn"])?$_SESSION["ldap"]["dn"]:$dn, ENT_QUOTES);?>" size="20"></p>
 
         <button type="submit" name="set" value="submit" style="height:30px;width:60px">Set</button>
         
