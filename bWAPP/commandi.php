@@ -137,7 +137,7 @@ function commandi($data)
         else
         {
 
-            echo "<p align=\"left\">" . shell_exec("nslookup  " . commandi($target)) . "</p>";
+            echo "<p align=\"left\">" . shell_exec("nslookup " . escapeshellarg(commandi($target))) . "</p>";
 
         }
 
